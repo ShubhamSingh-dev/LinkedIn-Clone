@@ -9,7 +9,7 @@ export const sendWelcomeEmail = async (email, name, profileUrl) => {
   const recipient = [{ email }];
 
   try {
-    const response = await mailtrapClient.sendEmail({
+    const response = await mailtrapClient.send({
       from: sender,
       to: recipient,
       subject: "Welcome to LinkedIn Clone",
@@ -33,7 +33,7 @@ export const sendCommentNotificationEmail = async (
   const recipient = [{ email: recipientEmail }];
 
   try {
-    const response = await mailtrapClient.sendEmail({
+    const response = await mailtrapClient.send({
       from: sender,
       to: recipient,
       subject: "New Comment on Your Post",
@@ -60,7 +60,7 @@ export const sendConnectionAcceptedEmail = async (
   const recipient = [{ email: senderEmail }];
 
   try {
-    const response = await mailtrapClient.sendEmail({
+    const response = await mailtrapClient.send({
       from: sender,
       to: recipient,
       subject: `${recipientName} accepted your connection request`,
