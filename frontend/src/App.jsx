@@ -7,6 +7,7 @@ import SignUpPage from "./pages/auth/SignUpPage";
 import toast, { Toaster } from "react-hot-toast";
 import { useQuery } from "@tanstack/react-query";
 import { axiosInstance } from "./lib/axios";
+import NotificationPage from "./pages/NotificationPage";
 
 function App() {
   // Used to fetch data
@@ -41,6 +42,10 @@ function App() {
         <Route
           path="/login"
           element={!authUser ? <LoginPage /> : <Navigate to={"/"} />}
+        />
+        <Route
+          path="/notifications"
+          element={authUser ? <NotificationPage /> : <Navigate to={"/login"} />}
         />
       </Routes>
       <Toaster /> {/* Used to show toast messages */}
