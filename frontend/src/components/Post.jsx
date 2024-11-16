@@ -169,7 +169,7 @@ const Post = ({ post }) => {
           <div className="mb-4 max-h-60 overflow-y-auto">
             {comments.map((comment) => (
               <div
-                key={comment._id}
+                key={comment._id || comment.createdAt}
                 className="mb-2 bg-base-100 p-2 rounded flex items-start"
               >
                 <img
